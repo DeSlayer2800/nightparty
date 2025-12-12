@@ -99,19 +99,22 @@
             border-bottom: 1px solid #333;
         }
 
-        .marquee-text {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--text-light);
-            white-space: nowrap;
-            display: inline-block;
-            animation: moveLeftToRight 10s linear infinite;
-        }
+        /* --- Marquee (UPDATED: RIGHT TO LEFT) --- */
+.marquee-text { 
+    font-size: 1.8rem; 
+    font-weight: bold; 
+    color: var(--text-light); 
+    white-space: nowrap; 
+    display: inline-block; 
+    /* Changed animation name to match new keyframes below */
+    animation: moveRightToLeft 10s linear infinite; 
+}
 
-        @keyframes moveLeftToRight {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100vw); }
-        }
+/* Updated Keyframes: Starts off-screen Right (100vw) -> Ends off-screen Left (-100%) */
+@keyframes moveRightToLeft { 
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-100%); }
+}
 
         /* --- Hero Section --- */
         .hero {
@@ -474,5 +477,6 @@
 </body>
 
 </html>
+
 
 
